@@ -15,6 +15,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: 1px solid red;
 }
 
 html {
@@ -28,6 +29,8 @@ body {
   font-size: 1rem;
   color: var(--text);
   background-color: var(--background);
+
+  overflow-x: hidden;
 }
 
 /* Headings */
@@ -117,9 +120,10 @@ header {
   background-color: var(--header-bg);
   position: sticky;
   top: 0;
+  left: 0;
 }
 
-header .content-wrapper {
+.header .content-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -128,6 +132,7 @@ header .content-wrapper {
   max-width: 1440px;
   margin: 0 auto;
   padding: 1rem;
+  flex-wrap: wrap;
 }
 
 .header-logo {
@@ -159,6 +164,7 @@ header .content-wrapper {
   list-style-type: none;
   gap: 2rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .header-nav ul li a {
