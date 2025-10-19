@@ -1,36 +1,37 @@
-const serviceButtons = document.querySelectorAll(".service-card")
-const aboutCards = document.querySelectorAll(".about-card")
-const placeholder = document.querySelector(".about-custom")
+// Mobile navigation toggle //
 
-serviceButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const targetClass = button.id.replace("service-", "about-")
-    let anyActive = false
+const hamburger = document.querySelector(".hamburger")
+const icon = hamburger.querySelector("i")
+const mobileNav = document.querySelector(".mobile-nav")
 
-    aboutCards.forEach((card) => {
-      if (card.classList.contains(targetClass)) {
-        // Toggle the clicked card
-        card.classList.toggle("active")
-      } else {
-        // Hide all other cards
-        card.classList.remove("active")
-      }
+function toggleHamburger() {
+  mobileNav.classList.toggle("active")
 
-      if (
-        card.classList.contains("active") &&
-        !card.classList.contains("about-custom")
-      ) {
-        anyActive = true
-      }
-    })
+  if (icon.classList.contains("fa-bars")) {
+    icon.classList.remove("fa-bars")
+    icon.classList.add("fa-xmark")
+    icon.style.transform = "rotate(90deg)"
+  } else {
+    icon.classList.remove("fa-xmark")
+    icon.classList.add("fa-bars")
+    icon.style.transform = "rotate(0deg)"
+  }
+}
 
-    // Show placeholder if no other cards are active
-    if (placeholder) {
-      if (!anyActive) {
-        placeholder.classList.add("active")
-      } else {
-        placeholder.classList.remove("active")
-      }
+hamburger.addEventListener("click", toggleHamburger)
+
+// sticky header scroll //
+
+const header = document.querySelector(".header")
+
+function stickyHeaderScroll() {
+  if (window.innerWidth >= 1000) {
+    if (window.scrollY >= 50) {
+      header.classList.add("scroll")
+    } else if (window.scrollY <= 50) {
+      header.classList.remove("scroll")
     }
-  })
-})
+  }
+}
+
+window.addEventListener("scroll", stickyHeaderScroll)
