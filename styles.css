@@ -98,24 +98,6 @@ a:hover {
   padding: 0.75rem;
 }
 
-button {
-  font-size: clamp(1rem, 2vw, 1.125rem);
-  background-color: var(--link-hover);
-  border: 1px solid #f8f9fa;
-  border-radius: var(--radius);
-  padding: var(--padding);
-  text-decoration: none;
-  color: var(--header-bg);
-  cursor: pointer;
-}
-
-button:hover {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  background-color: var(--link-hover);
-  border: 1px solid #dadce0;
-  text-decoration: none;
-}
-
 /* Core section styles */
 
 .page-wrapper {
