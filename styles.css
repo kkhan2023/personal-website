@@ -451,3 +451,10 @@ footer {
   grid-area: footer;
   border: 1px solid black;
 }
+
+@media (max-width: 768px) {
+  .main-hero-image img,
+  .about-image img {
+    max-width: 325px;
+  }
+}
